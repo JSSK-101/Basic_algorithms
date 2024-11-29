@@ -6,30 +6,10 @@ while True: #makes a list of input numbers
     inp = input()
     
     if inp.isnumeric(): #only appends if the items are numbers
-        list_sort.append(int(inp))
+        list_sort.append([int(inp)])
         
     else:
         break
-
-
-while True: #makes a list of a list of pairs of numbers
-    if len(list_sort) > 1: 
-        if list_sort[0] < list_sort[1]: #checks to see which number is bigger
-            list_temp.append([list_sort[0],list_sort[1]])
-            
-        else:
-            list_temp.append([list_sort[1],list_sort[0]])
-        del list_sort[:2]
-    
-    elif len(list_sort) == 1: #appends the final term if it is odd
-        list_temp.append([list_sort[0]])
-        del list_sort[0]
-        
-    else:
-        break
-    
-list_sort = list_temp #reset variables
-list_temp = []
 
 while True: #loops for every layer of the merge
     if len(list_sort) != 1:
@@ -70,7 +50,7 @@ while True: #loops for every layer of the merge
         list_sort = list_temp #reset variables
         list_temp = []
         
+        print(list_sort)
+        
     else: #terminates once all items have been sorted into one list
         break
-    
-print(list_sort)
